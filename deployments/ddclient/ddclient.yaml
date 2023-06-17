@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ddclient-deployment
+  labels:
+    app: ddclient
+spec:
+  selector:
+    matchLabels:
+      app: ddclient
+  template:
+    metadata:
+      labels:
+        app: ddclient
+    spec:
+      containers:
+      - name: ddclient
+        image: lscr.io/linuxserver/ddclient:latest
